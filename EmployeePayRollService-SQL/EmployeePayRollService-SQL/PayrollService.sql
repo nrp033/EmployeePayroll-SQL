@@ -80,8 +80,9 @@ select * from employee_payroll;
 -- UC10 - Adding another Value for Terissa in Sales&Marketing Department.
 
 insert into employee_payroll   
-values(104,'Terissa',400000.00,'2020-06-1','F',8156782910,'Sales','mumbai',2000,1000,200,18000),
-(105,'Terissa',400000.00,'2020-06-1','F',8156782910,'Marketing','mumbai',2000,1000,200,18000);
+values('Terissa',400000.00,'2020-06-1','F',8156782909,'mumbai','Sales',16000.0,1000,200,0,18000),
+('Terissa',400000.00,'2020-06-1','F',8156782909,'mumbai','Marketing',16000.0,1000,200,0,18000);
+
 select * from employee_payroll; 
 
 --UC11 - adding same name to with differnt department and same other attributes to same table.
@@ -124,6 +125,7 @@ select * from company;
 
 
 --creating employee table
+
 create table employee(employee_id int not null primary key,employee_name varchar(70) not null,gender char(1) not null,address varchar(100) not null,phone_number bigint not null,start_date datetime not null,company_id int not null,payroll_id int not null,basic_pay money not null,foreign key(company_id) references company(company_id),foreign key(payroll_id) references payroll(payroll_Id));
 
 
@@ -133,11 +135,13 @@ insert into employee values
 (1,'Poonam','F','latur',3939390910,'2020-10-2',301,201,300000),
 (2,'Ruhi','M','pune',3939690910,'2019-10-2',302,202,40000),
 (3,'Diksha','F','amrvati',3959390910,'2020-10-2',301,203,600000);
+
+
 select * from employee;
 
 
 --creating employee department table
-create table EmployeeDepartment(employee_Department_id int not null,employee_id int not null,department_id int not null,foreign key(employee_id) references employee(employee_id),foreign key(department_id)references Department(department_id));
+create table Department(employee_Department_id int not null,employee_id int not null,department_id int not null,foreign key(employee_id) references employee(employee_id),foreign key(department_id)references Department(department_id));
 
 
 --inserted data into employee department table
@@ -147,10 +151,10 @@ insert into EmployeeDepartment values
 (401,1,102),
 (402,2,101);
 
-select * from EmployeeDepartment;
+select * from Department;
 
 
-Footer
+
 
 
 
