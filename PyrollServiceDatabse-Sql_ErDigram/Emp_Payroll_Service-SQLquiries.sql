@@ -18,8 +18,7 @@ Select * from Employee_Payroll
 --UC5-Retriving perticular information from table
 select salary from Employee_Payroll where name='Bill'
 
-update Employee_Payroll set Address='Boston' where ID=1 or ID=2 or ID=3
-
+select Start_Date from Employee_Payroll where name='Terisa'
 
 select * from Employee_Payroll where Start_Date between CAST ('2021-05-01' as date)and getdate();
 
